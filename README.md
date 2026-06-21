@@ -26,6 +26,37 @@ The skill guides through a 5-phase analytical workflow:
 4. **Hidden Champion Discovery** — Search within bottleneck links for small companies with technology monopolies
 5. **Synthesis** — Produce a structured report with actionable findings
 
+## Install via `install-agent-skill` (multi-agent, recommended)
+
+If you use **Claude Code**, **OpenAI Codex**, or **OpenClaw**, install this skill into the correct native directory with one command:
+
+```bash
+# Claude Code — project-local
+npx install-agent-skill jojogh/industry-bottleneck-hunter
+
+# Claude Code — global
+npx install-agent-skill jojogh/industry-bottleneck-hunter -g
+
+# OpenAI Codex
+npx install-agent-skill jojogh/industry-bottleneck-hunter -a codex -g
+
+# OpenClaw
+npx install-agent-skill jojogh/industry-bottleneck-hunter -a openclaw -g
+
+# Install for all supported agents globally (non-interactive)
+npx install-agent-skill jojogh/industry-bottleneck-hunter -a all -g -y
+```
+
+> **Not yet on npm?** Use the GitHub version directly:
+> ```bash
+> npx github:jojogh/install-agent-skill jojogh/industry-bottleneck-hunter -a claude -g
+> ```
+
+The installer will:
+- Copy only skill files (`SKILL.md`, `README.md`, `scripts/`, `references/`, `assets/`)
+- Place them in each agent's native skill directory
+- Back up any existing installation automatically
+
 ## Installation
 
 ### Option 1: via `npx` (Recommended — no clone needed)
