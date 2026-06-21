@@ -28,10 +28,34 @@ The skill guides through a 5-phase analytical workflow:
 
 ## Installation
 
-### Global (Recommended)
+### Option 1: via `npx` (Recommended — no clone needed)
 
 ```bash
-# Claude Code
+npx industry-bottleneck-hunter
+```
+
+Or install directly from the GitHub repository:
+
+```bash
+npx github:jojogh/industry-bottleneck-hunter
+```
+
+This will copy the skill into `~/.claude/skills/industry-bottleneck-hunter/`.
+
+### Option 2: via `npm`
+
+```bash
+npm install -g industry-bottleneck-hunter
+industry-bottleneck-hunter
+```
+
+### Option 3: Manual / symlink
+
+```bash
+# Clone the repo
+git clone https://github.com/jojogh/industry-bottleneck-hunter.git
+
+# Symlink into your global Claude Code skills directory
 ln -s "$(pwd)/industry-bottleneck-hunter" ~/.claude/skills/industry-bottleneck-hunter
 ```
 
