@@ -1,1 +1,17 @@
+# Analysis reports - not part of the skill package
+*.md.txt
+*.zip
+article*.md
+result_status.txt
+605589_*
+AI-Chip-*.md
+AI芯片*
+MACOM_*
+七大瓶颈*
+山阳特殊制钢*
+科技材料涨价*
+隐形冠军_*
+sex-robot*
+
+# Embedded git repositories
 Awesome-finance-skills/
