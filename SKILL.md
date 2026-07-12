@@ -6,6 +6,8 @@ author: Alex Zhang <yuanhao.zhang@gmail.com>
 
 # industry-bottleneck-hunter
 
+> Cross-agent skill for Claude Code and OpenAI Codex CLI.
+
 ## Description
 
 Analyze any industry to identify rising sub-chains, find the "Strait of Hormuz" bottleneck links, and discover small-cap companies with monopoly core technology.
