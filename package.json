@@ -1,14 +1,15 @@
 {
   "name": "industry-bottleneck-hunter",
   "version": "1.0.0",
-  "description": "Install the industry-bottleneck-hunter Claude Code skill for supply-chain bottleneck and hidden-champion analysis.",
+  "description": "Install the industry-bottleneck-hunter skill for Claude Code and OpenAI Codex CLI — supply-chain bottleneck and hidden-champion analysis.",
   "main": "install.js",
   "bin": "install.js",
   "files": [
     "install.js",
     "SKILL.md",
     "README.md",
-    "package.json"
+    "package.json",
+    "agents/openai.yaml"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,6 +17,9 @@
   "keywords": [
     "claude-code",
     "claude",
+    "codex",
+    "codex-cli",
+    "openai",
     "skill",
     "industry-analysis",
     "supply-chain",

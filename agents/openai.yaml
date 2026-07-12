@@ -1,0 +1,4 @@
+name: industry-bottleneck-hunter
+description: Analyze any industry to identify rising sub-chains, find the "Strait of Hormuz" bottleneck links, and discover small-cap companies with monopoly core technology.
+author: Alex Zhang <yuanhao.zhang@gmail.com>
+invocation: $industry-bottleneck-hunter

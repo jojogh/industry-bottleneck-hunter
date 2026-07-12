@@ -1,6 +1,6 @@
 # industry-bottleneck-hunter
 
-A Claude Code skill for identifying supply chain bottlenecks and hidden champion companies in any industry.
+A Claude Code and OpenAI Codex CLI skill for identifying supply chain bottlenecks and hidden champion companies in any industry.
 
 ## What It Does
 
@@ -71,7 +71,8 @@ Or install directly from the GitHub repository:
 npx github:jojogh/industry-bottleneck-hunter
 ```
 
-This will copy the skill into `~/.claude/skills/industry-bottleneck-hunter/`.
+This will copy the skill into `~/.claude/skills/industry-bottleneck-hunter/` by default.
+Use `-a codex` to install into `~/.codex/skills/industry-bottleneck-hunter/` instead.
 
 ### Option 2: via `npm`
 
@@ -94,6 +95,22 @@ ln -s "$(pwd)/industry-bottleneck-hunter" ~/.claude/skills/industry-bottleneck-h
 
 Copy the skill directory into your project's `.claude/skills/` folder.
 
+### OpenAI Codex CLI
+
+```bash
+# Global install for Codex
+npx industry-bottleneck-hunter -a codex
+
+# Project-local install for Codex
+npx industry-bottleneck-hunter -a codex -l
+```
+
+Invoke with:
+```
+$industry-bottleneck-hunter
+```
+or via the `/skills` picker.
+
 ## Usage
 
 Activate by mentioning the skill's trigger concepts in your prompt:
@@ -108,6 +125,11 @@ Find the "Strait of Hormuz" in the EV battery supply chain
 
 ```
 Look for hidden champion companies in semiconductor equipment
+```
+
+In Codex CLI, invoke with:
+```
+$industry-bottleneck-hunter
 ```
 
 ## Example Output Structure
