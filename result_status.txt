@@ -1,0 +1,2 @@
+False
+'gbk' codec can't encode character '\u2705' in position 0: illegal multibyte sequence
