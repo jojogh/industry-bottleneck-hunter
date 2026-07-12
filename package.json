@@ -1,0 +1,35 @@
+{
+  "name": "industry-bottleneck-hunter",
+  "version": "1.0.0",
+  "description": "Install the industry-bottleneck-hunter Claude Code skill for supply-chain bottleneck and hidden-champion analysis.",
+  "main": "install.js",
+  "bin": "install.js",
+  "files": [
+    "install.js",
+    "SKILL.md",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "claude-code",
+    "claude",
+    "skill",
+    "industry-analysis",
+    "supply-chain",
+    "bottleneck",
+    "hidden-champion"
+  ],
+  "author": "Alex Zhang <yuanhao.zhang@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jojogh/industry-bottleneck-hunter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jojogh/industry-bottleneck-hunter/issues"
+  },
+  "homepage": "https://github.com/jojogh/industry-bottleneck-hunter#readme"
+}
