@@ -1,6 +1,7 @@
 # Analysis reports - not part of the skill package
 *.md.txt
 *.zip
+*.skill
 article*.md
 result_status.txt
 605589_*

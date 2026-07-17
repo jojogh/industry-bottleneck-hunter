@@ -18,12 +18,13 @@ Inspired by the geopolitical concept of the Strait of Hormuz (a narrow waterway 
 
 ## How It Works
 
-The skill guides through a 5-phase analytical workflow:
+The skill guides through a 6-phase analytical workflow:
 
+0. **Business-Line Decomposition** (conditional) — When the user starts with a company or stock code, map its segments so the right industry lens is chosen
 1. **Industry Selection** — Map sub-sectors by lifecycle stage and focus on rising segments
 2. **Value Chain Decomposition** — Break the chain into upstream, midstream, and downstream links
 3. **Bottleneck Scanning** — Score each link on concentration, technology barriers, substitution difficulty, capacity elasticity, and value capture
-4. **Hidden Champion Discovery** — Search within bottleneck links for small companies with technology monopolies
+4. **Hidden Champion Discovery** — Search within bottleneck links for small companies with technology monopolies, plus an implicit-intelligence moat scan
 5. **Synthesis** — Produce a structured report with actionable findings
 
 ## Install via `install-agent-skill` (multi-agent, recommended)

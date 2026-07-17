@@ -9,7 +9,8 @@
     "SKILL.md",
     "README.md",
     "package.json",
-    "agents/openai.yaml"
+    "agents/openai.yaml",
+    "references/"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

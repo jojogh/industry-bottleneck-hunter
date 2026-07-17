@@ -1,205 +1,90 @@
 ---
 name: industry-bottleneck-hunter
-description: Analyze any industry to identify rising sub-chains, find the "Strait of Hormuz" bottleneck links, and discover small-cap companies with monopoly core technology.
-author: Alex Zhang <yuanhao.zhang@gmail.com>
+description: Use when the user wants to map supply-chain chokepoints and hidden-champion companies in an industry. Triggers — "bottleneck analysis", "supply chain chokepoint", "Strait of Hormuz", "hidden champion", "moat scan", or decomposing a company's business lines before industry analysis.
+metadata:
+  author: Alex Zhang <yuanhao.zhang@gmail.com>
 ---
 
 # industry-bottleneck-hunter
 
-> Cross-agent skill for Claude Code and OpenAI Codex CLI.
+> Find the chokepoints and hidden champions in any industry supply chain.
 
-## Description
+## Leading Concepts
 
-Analyze any industry to identify rising sub-chains, find the "Strait of Hormuz" bottleneck links, and discover small-cap companies with monopoly core technology.
-
-## When to Use
-
-Use this skill when:
-- Researching a new industry for investment, business entry, or competitive intelligence
-- Looking for "hidden champion" companies in overlooked supply chain segments
-- Trying to understand where the real pricing power lies in a value chain
-- Evaluating which upstream bottleneck could disrupt an entire downstream industry
-- Building an industry map that exposes structural vulnerabilities and opportunities
-
-## Core Capabilities
-
-1. **Industry Lifecycle Positioning** - Determine which sub-sectors are in ascent vs. maturity vs. decline
-2. **Value Chain Decomposition** - Map the complete chain from raw materials to end consumer
-3. **Bottleneck Identification** - Pinpoint the "Strait of Hormuz" links that control flow and pricing
-4. **Hidden Champion Screening** - Find small-output companies that hold monopoly or oligopoly positions in critical technology nodes
-5. **Moat Assessment** - Evaluate technology barriers, switching costs, and substitution risks for each bottleneck candidate
-
-## Analytical Framework
-
-### The "Strait of Hormuz" Concept
-
-In global energy, the Strait of Hormuz is a narrow waterway through which ~20% of world oil passes. It is small in physical size but irreplaceable in systemic importance. Every industry has equivalent bottlenecks:
-
-| Trait | Meaning in Supply Chain Context |
-|-------|--------------------------------|
-| **Narrow channel** | Few or single suppliers globally |
-| **High throughput dependency** | Large downstream value depends on this node |
-| **No viable alternative route** | Switching cost or substitution is prohibitively expensive |
-| **Easy to control** | Dominant player can restrict supply or raise prices |
-| **Disproportionate impact** | A small disruption cascades into large downstream losses |
-
-### Screening Criteria for Bottleneck Segments
-
-Apply these five filters sequentially:
-
-1. **Concentration Ratio** — Do the top 3 players control >70% global supply?
-2. **Technology Barrier** — Does production require >5 years of R&D or proprietary know-how?
-3. **Substitution Difficulty** — Would switching suppliers require redesigning downstream products?
-4. **Capacity Inelasticity** — Can supply be scaled up quickly in response to demand? (Desired answer: No)
-5. **Value Capture** — Does this node capture a high margin despite representing a small % of final product cost?
-
-### Screening Criteria for Target Companies
-
-Within each bottleneck segment, rank companies on:
-
-1. **Output Scale** — Annual revenue or production volume is small relative to downstream market size (prefer <5% of chain value)
-2. **Technology Monopoly** — Holds core patents, trade secrets, or process IP that competitors cannot replicate within 3-5 years
-3. **Customer Lock-in** — Long qualification cycles, integrated into customer product design, or sole-source contracts
-4. **Pricing Power** — Demonstrated ability to raise prices without significant volume loss
-5. **Defensibility** — Network effects, learning curve advantages, or regulatory barriers protect position
+- **Chokepoint (Strait-of-Hormuz link):** A narrow, irreplaceable value-chain node whose disruption cascades downstream. It passes five tests: few suppliers, high downstream dependency, hard to substitute, inelastic capacity, and high value capture.
+- **Hidden champion:** A small-output company that dominates a chokepoint through proprietary core technology.
+- **Moat scan:** The legwork that proves a hidden champion's defensibility — patents, customer lock-in, regulatory licenses, and capital signals.
 
 ## Workflow
 
-### Phase 1: Industry Selection and Lifecycle Mapping
+### Phase 0: Business-Line Decomposition (conditional)
 
-Determine the user's target industry. If unspecified, ask:
-- "Which industry do you want to analyze?" (e.g., AI, EV batteries, semiconductors, biotech, robotics, commercial aerospace)
-- "Are you focused on a specific geography or global markets?"
-- "What is your goal — investment, business entry, supply chain security, or competitive intelligence?"
+**Trigger:** The user gives a company name or stock code instead of an industry.
 
-Once the industry is identified, map its major sub-sectors and classify each by lifecycle stage:
-- **Introduction** — Early R&D, pre-commercialization
-- **Growth/Rising** — Rapid demand expansion, capacity building, new entrants
-- **Maturity** — Stable demand, consolidation, margin compression
-- **Decline** — Shrinking demand, substitution threats
+**Steps:**
+1. Map every material segment: >5% revenue, high gross margin, or strategic pipeline value.
+2. Present a summary table: Segment | Revenue Share | Growth | Margin | Lifecycle | Moat Signal.
+3. Ask the user which segment to analyze, or offer to run the strongest-bottleneck segment by default.
 
-Focus analysis on sub-sectors in the **Growth/Rising** phase.
+**Completion:** The user has confirmed the target segment, or you have explicit permission to proceed with the default.
 
-### Phase 2: Value Chain Decomposition
+### Phase 1: Industry & Lifecycle Mapping
 
-For each rising sub-sector, decompose the value chain into 4-6 major links. Use this template:
+**Steps:**
+1. Confirm target industry, geography, and goal: investment, business entry, supply-chain security, or competitive intelligence.
+2. List major sub-sectors and classify each as Introduction, Growth, Maturity, or Decline.
+3. Select Growth/Rising sub-sectors for deeper analysis.
 
-```
-Sub-Sector: [Name]
-│
-├── Upstream
-│   ├── Raw Materials
-│   ├── Refining/Purification
-│   └── Key Components
-│
-├── Midstream
-│   ├── Core Manufacturing Equipment
-│   ├── Process Technology
-│   └── Quality Control/Testing
-│
-└── Downstream
-    ├── Integration/Assembly
-    ├── Distribution
-    └── End Applications
-```
+**Completion:** You have 1–3 rising sub-sectors and the user's goal is recorded.
 
-For each link, estimate:
-- Number of global suppliers (concentration)
-- Typical gross margin range
-- Capital intensity
-- Technology maturity level
+### Phase 2: Value-Chain Decomposition
 
-### Phase 3: Bottleneck Identification (The "Strait of Hormuz" Scan)
+**Steps:**
+1. For each rising sub-sector, map upstream → midstream → downstream in 4–6 major links.
+2. For each link, estimate supplier concentration, gross margin, capital intensity, and technology maturity.
 
-Apply the five bottleneck screening criteria to each value chain link. Score each link 1-5 on each criterion. Links scoring 18+ out of 25 are candidate bottlenecks.
+**Completion:** Each rising sub-sector has a value-chain tree with concentration and margin notes on every link.
 
-For each candidate, ask:
-- "If this link were blocked for 6 months, what % of downstream output would halt?"
-- "How long would it take a new entrant to achieve commercial viability?"
-- "What is the minimum viable scale, and how much capital is required to reach it?"
+### Phase 3: Chokepoint Scan
 
-Narrow to 1-3 primary bottlenecks per sub-sector.
+**Steps:**
+1. Score each link 1–5 on the five chokepoint criteria in `references/chokepoint-criteria.md`.
+2. Mark links scoring ≥18/25 as candidate chokepoints.
+3. For each candidate, answer: (a) % of downstream output that would halt if blocked for 6 months; (b) new-entrant time-to-viability; (c) minimum viable scale and required capital.
+4. Narrow to 1–3 primary chokepoints per sub-sector.
 
-### Phase 4: Hidden Champion Discovery
+**Completion:** You have 1–3 ranked chokepoints per rising sub-sector, each with quantitative justification.
 
-Within each bottleneck link, identify companies that match the target profile:
+### Phase 4: Hidden-Champion Discovery
 
-**Search strategy:**
-1. Start with industry association member lists and conference speaker rosters
-2. Review patent filings in the bottleneck technology area (top assignees)
-3. Check semiconductor/equipment/materials industry reports for "niche player" mentions
-4. Look for companies that are sole-source suppliers to major OEMs
-5. Examine M&A activity — who are the acquirees in this space?
+**Steps:**
+1. Search within each chokepoint for candidate companies: industry associations, patents, niche reports, sole-source OEM suppliers, and M&A activity.
+2. Compile a profile for each candidate: revenue, employees, core tech, key patents, major customers, market share, financial trend, and risks.
+3. Run the implicit-intelligence moat scan from `references/implicit-intelligence-guide.md` across Technology & Patents, Customers & Supply Chain, and Regulatory & Capital Signals.
+4. Update the verdict: Strong / Plausible / Reject.
 
-**For each candidate company, compile:**
-- Company name and headquarters
-- Estimated annual revenue and employee count
-- Core product/technology description
-- Key patents or proprietary processes
-- Major customers (if public)
-- Market share estimate in bottleneck segment
-- Years in business and founder/CEO background
-- Recent financial trends (revenue growth, margin expansion)
-- Risk factors (customer concentration, regulatory exposure, technology obsolescence)
+**Completion:** You have 1–5 candidate companies per chokepoint, each with an implicit-intelligence scorecard and a final verdict.
 
-### Phase 5: Synthesis and Output
+### Phase 5: Synthesis
 
-Produce a structured report:
+**Steps:**
+1. Produce the structured report using `references/output-template.md`.
+2. State the highest-conviction chokepoint, the most attractive hidden champion, and the timeline to watch.
+3. Flag evidence gaps and confidence levels explicitly.
 
-```markdown
-# Industry Bottleneck Analysis: [Industry Name]
+**Completion:** A complete report is returned to the user and every claim has a source or an explicit confidence label.
 
-## Executive Summary
-- Industry: [Name]
-- Analysis Date: [Date]
-- Key Finding: [1-2 sentence takeaway]
+## Quality Gates
 
-## Rising Sub-Sectors
-| Sub-Sector | Lifecycle Stage | Growth Driver | Key Risk |
-|------------|----------------|---------------|----------|
-| [Name] | Growth | [Driver] | [Risk] |
-
-## Value Chain Maps
-### [Sub-Sector 1]
-[Tree diagram]
-
-### Bottleneck Links
-| Link | Concentration | Tech Barrier | Substitution Risk | Capacity Elasticity | Value Capture | Total Score |
-|------|--------------|--------------|-------------------|---------------------|---------------|-------------|
-| [Link] | 5 | 5 | 4 | 2 | 5 | 21 |
-
-## Hidden Champions
-### [Company Name]
-- **Segment:** [Bottleneck link]
-- **Revenue:** [Estimate]
-- **Employees:** [Count]
-- **Core Tech:** [Description]
-- **Market Position:** [Oligopoly/Monopoly/Dominant]
-- **Key Customers:** [Names]
-- **Moat Strength:** [High/Medium/Low] — [Explanation]
-- **Investment Thesis:** [Why this company matters]
-
-## Key Risks to Monitor
-1. [Risk 1]
-2. [Risk 2]
-3. [Risk 3]
-
-## Opportunity Assessment
-- **Highest conviction bottleneck:** [Link]
-- **Most attractive hidden champion:** [Company]
-- **Timeline to watch:** [When supply/demand imbalance may peak]
-```
-
-## Quality Standards
-
-- Every bottleneck claim must include quantitative justification (market share data, capacity numbers, or margin evidence)
-- Distinguish between "hard to enter due to capital" vs. "hard to enter due to technology" — only the latter creates durable moats
-- Flag when analysis is limited by information availability (private companies, undisclosed contracts)
-- Never assume monopoly status without evidence of customer lock-in or switching costs
-- For Chinese companies, check whether technology is indigenous or licensed — licensed tech does not constitute a moat
+Before finalizing, confirm:
+- [ ] Every chokepoint claim has quantitative support: market share, capacity, or margin.
+- [ ] Every hidden-champion claim has at least one piece of implicit evidence.
+- [ ] Technology moats are distinguished from capital moats.
+- [ ] Chinese companies are checked for indigenous versus licensed technology.
+- [ ] Evidence gaps and private-company estimates are labeled as directional.
 
 ## Limitations
-- This skill provides analytical structure, not real-time market data. Verify all financial figures against primary sources before making investment decisions.
-- Private company revenue and market share estimates may be inaccurate; treat them as directional rather than precise.
-- Technology moats erode over time; reassess at least annually for fast-moving industries.
-- Use this skill only when the user has specified an industry or accepted a proposed industry. Do not proceed with generic examples if the user has a specific target.
+
+- This skill provides analytical structure, not real-time data. Verify financials against primary sources before acting.
+- Private-company estimates are directional.
+- Moats erode; reassess annually for fast-moving industries.
